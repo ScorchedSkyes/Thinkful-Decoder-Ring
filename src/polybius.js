@@ -5,6 +5,7 @@
 
 const polybiusModule = (function () {
   // you can add any code you want within this function scope
+   //establish variable for encode square
   const lookUpEncode = {
     'a': '11',
     'b': '21',
@@ -33,6 +34,7 @@ const polybiusModule = (function () {
     'y': '45',
     'z': '55'
   }
+  //establish variable for decode square
   const lookUpDecode = {
     '11':'a',
     '21':'b',
@@ -61,12 +63,19 @@ const polybiusModule = (function () {
     '55':'z'
  }
   function polybius(input, encode = true) {
+    // no spaces variable that takes the input and then uses regex to avoid whitespace on a global level
     let noSpaces = input.replace(/\s/g, '');
+    //if no encode and no spaces variable % 2 !===0 return false
     if(!encode && noSpaces.length % 2 !== 0) return false
+    //create a variable that checks if encode is true, then use the encode square else use decode square
       const direction = encode ? lookUpEncode : lookUpDecode;
+      //return the input in lowercase
       return input.toLowerCase()
+      //match the numbers 0-9 doubled{2} to the alphabet a-z avoid whitespace and make it global to loop back again
         .match(/[0-9]{2}|[a-z]|\s/g)
+        //map it into a new array with the direction of the character or character
         .map(character => direction[character] || character)
+        //join the new array
         .join('')
   }
 
