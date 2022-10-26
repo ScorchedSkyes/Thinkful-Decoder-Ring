@@ -4,4 +4,6 @@
 ### This project uses string methods, regex, and advanced functions to encode and decode messages. 
 
 
-Plans are to refactor the code and add psudocode to explain process of each line
+Plans are 
+-to refactor the code 
+-add pseudocode to explain process of each line -complete
