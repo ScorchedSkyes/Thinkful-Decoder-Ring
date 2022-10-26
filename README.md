@@ -6,4 +6,4 @@
 
 Plans are:
 - to refactor the code 
-- add pseudocode to explain process of each line -complete
+- add pseudocode to explain process of each line - <span style="color:green">some *green* text</span>.complete
